@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Operators</title>
+</head>
+<body>
+
+<h1>Types of JavaScript Operators</h1>
+
+<h2>Arithmetic Operators</h2>
+<p id="arithmetic"></p>
+<hr>
+
+
+<h2>Assignment Operators</h2>
+<p id="assignment"></p>
+<hr>
+
+
+<h2>Comparison Operators</h2>
+<p id="comparison"></p>
+<hr>
+
+
+<h2>Logical Operators</h2>
+<p id="logical"></p>
+<hr>
+
+
+<h2>String Operator</h2>
+<p id="string"></p>
+<hr>
+
+
+<h2>Ternary Operator</h2>
+<p id="ternary"></p>
+<hr>
+
+<h2>Type Operator</h2>
+<p id="type"></p>
+<hr>
+
+
+<h2>Bitwise Operators</h2>
+<p id="bitwise"></p>
+<hr>
+
+<script>
+    
+    let a = 80, b = 5;
+    document.getElementById("arithmetic").innerHTML =
+        "10 + 5 = " + (a + b) + "<br>" +
+        "10 - 5 = " + (a - b) + "<br>" +
+        "10 × 5 = " + (a * b) + "<br>" +
+        "10 ÷ 5 = " + (a / b) + "<br>" +
+        "10 % 5 = " + (a % b);
+
+  
+    let x = 10;
+    x += 5;
+    document.getElementById("assignment").innerHTML =
+        "x = 10, x += 5 → " + x;
+
+    document.getElementById("comparison").innerHTML =
+        "10 == '10' → " + (10 == "10") + "<br>" +
+        "10 === '10' → " + (10 === "10") + "<br>" +
+        "10 > 5 → " + (10 > 5);
+
+    document.getElementById("logical").innerHTML =
+        "true && false → " + (true && false) + "<br>" +
+        "true || false → " + (true || false) + "<br>" +
+        "!true → " + (!true);
+
+
+    document.getElementById("string").innerHTML =
+        "'Hello' + ' World' → " + ("Hello" + " Jenisha");
+
+ 
+    let age = 20;
+    document.getElementById("ternary").innerHTML =
+        "(age >= 18) ? 'Adult' : 'Minor' → " +
+        ((age >= 18) ? "Adult" : "Minor");
+
+ 
+    document.getElementById("type").innerHTML =
+        "typeof 100 → " + typeof 100 + "<br>" +
+        "typeof 'JavaScript' → " + typeof "JavaScript";
+
+  
+    document.getElementById("bitwise").innerHTML =
+        "5 & 1 → " + (5 & 1) + "<br>" +
+        "5 | 1 → " + (5 | 1) + "<br>" +
+        "5 ^ 1 → " + (5 ^ 1);
+</script>
+
+</body>
+</html>
