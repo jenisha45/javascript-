@@ -3,13 +3,17 @@
 <body>
 <p id="demo"></p>
 <script>
-
-const cars = [];
-cars[0]= "Saab";
-cars[1]= "Volvo";
-cars[2]= "BMW";
-document.getElementById("demo").innerHTML = cars;
-
+const tools = ["Hammer", "Screwdriver"];
+tools.push("Wrench");  
+tools.unshift("screw");
+  console.log(last);
+  console.log(items[0]);    
+console.log(items.at(-1));
+document.getElementById("demo").innerHTML = tools;
+let last = tools.pop(); 
+  console.log(tools)
+let remove= tools.unshift();
+  console.log(tools)
 </script>
 </body>
 </html>
