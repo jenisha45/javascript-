@@ -1,0 +1,29 @@
+<html>
+  <head><title>Use of loops</title></head>
+  <body>
+    <script>
+      let cookiesInJar = 3;
+let batteryPercent = 70;
+while (cookiesInJar > 0) {
+    console.log(`Ate a cookie. Jar has ${cookiesInJar} left.`);
+    cookiesInJar--; 
+}
+console.log("The jar is empty!");
+
+      do {
+    // This block runs ONCE even though batteryPercent is 0
+    console.log("Attempting to boot up device..."); 
+} while (batteryPercent > 0); 
+
+console.log("Device shut down: Battery is dead.");
+
+      const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let len = cars.length;
+
+let text = "";
+for (let i = 0; i < len; i++) {
+  text += cars[i];
+}
+    </script>
+  </body>
+</html>
