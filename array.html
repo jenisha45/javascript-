@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <body>
 <p id="demo"></p>
@@ -6,14 +5,26 @@
 const tools = ["Hammer", "Screwdriver"];
 tools.push("Wrench");  
 tools.unshift("screw");
-  console.log(last);
-  console.log(items[0]);    
-console.log(items.at(-1));
+  console.log(tools[0]);    
+console.log(tools.at(-1));
 document.getElementById("demo").innerHTML = tools;
 let last = tools.pop(); 
   console.log(tools)
 let remove= tools.unshift();
   console.log(tools)
+
+let txt="";
+  for(let x in tools)
+  {
+    txt+=tools[x]+" ";
+  }
+  console.log(txt);
+
+let text1 = "";
+for (let x of tools) {
+text1 += x + " ";
+}
+console.log(text1);
 </script>
 </body>
 </html>
