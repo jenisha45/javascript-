@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title> Function in Javascript</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+      function sum(a,b)
+      {
+document.getElementById("demo").innerHTML=(a+b);
+      }
+      sum(22,"jenisha");
+      
+document.getElementById("demo1").innerHTML ="Output: " + toCelsius(50) + " Celsius";
+function toCelsius(f)
+{
+return (5/9) * (f-32);
+}
+ const add = (a, b) => {
+  const result = a + b;
+  return result; 
+};
+document.getElementById("demo2").innerHTML ="Output: " + add(12,7);
+    </script>
+  </body>
+</html>
