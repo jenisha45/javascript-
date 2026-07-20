@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie example</title>
+</head>
+
+<body>
+    <button type="button" onclick="setCookie('username','7', 'Jenisha kharbuja','12')">Set Cookie</button>
+    <!-- 12 is the expiry days of cookie, 7 is the id of cookie, Jenisha kharbuja is the value of cookie -->
+    <button type="button" onclick="alert(getCookie('username','7'))">Get Cookie</button>
+    <button type="button" onclick="deleteCookie('username')">Delete Cookie</button>
+</body>
+<script>
+    function setCookie(name, id, value, days)//value=cookie value, days=expiry days
+    {
+        let d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+
+        document.cookie =
+            name + "=" + id + "|" + value +
+            ";expires=" + d.toUTCString() +
+            ";path=/";
+        alert("Cookie Set Successfully:" + name + "=" + value + " for " + days + " days" + " with id:" + id);
+    }
+    function getCookie(name, id) {
+        let cookieArr = document.cookie.split(';');
+        for (let i = 0; i < cookieArr.length; i++) {
+            let cookiePair = cookieArr[i].split('=');
+            if (name == cookiePair[0].trim()) {
+                let data = cookiePair[1].split("|");
+                return "ID: " + data[0] + "\nName: " + data[1];
+            }
+        }
+        return "Cookie Not Found";
+    }
+    function deleteCookie(name) {
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+        alert("Cookie Deleted Successfully:" + name);
+    }
+
+</script>
+
+</html>

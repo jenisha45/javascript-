@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Lab Program</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        .intro {
+            color: blue;
+        }
+
+        .box {
+            border: 2px solid black;
+            padding: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">Document Object Model (DOM) Lab</h1>
+
+    <p class="intro">First Paragraph</p>
+    <p class="intro">Second Paragraph</p>
+
+    <p id="output"></p>
+
+    <input type="text" id="username" placeholder="Enter Name">
+
+    <br><br>
+
+    <button id="btn1">Change Heading</button>
+    <button id="btn2">Show Paragraphs</button>
+    <button id="btn3">Create Element</button>
+    <button id="btn4">Clone Element</button>
+    <button id="btn5">Remove Last Element</button>
+    <button id="btn6">Replace First Paragraph</button>
+
+    <hr>
+
+    <div id="container" class="box">
+
+        <p id="firstPara">This is First Paragraph</p>
+        <p>This is Second Paragraph</p>
+
+    </div>
+
+    <script>
+
+
+        let heading = document.getElementById("heading");
+
+
+        let intro = document.getElementsByClassName("intro");
+
+
+        let para = document.getElementsByTagName("p");
+
+
+        let firstIntro = document.querySelector(".intro");
+
+        let allParagraphs = document.querySelectorAll("p");
+
+
+
+        document.getElementById("btn1").addEventListener("click", function () {
+
+            heading.innerHTML = "<u>Welcome to JavaScript DOM</u>";
+
+            heading.style.color = "red";
+            heading.style.backgroundColor = "yellow";
+
+        });
+
+
+        document.getElementById("btn2").addEventListener("click", function () {
+
+            let text = "";
+
+            text += "By Class : " + intro[0].innerHTML + "<br>";
+            text += "By Tag : " + para[1].innerHTML + "<br>";
+            text += "Query Selector : " + firstIntro.innerHTML + "<br>";
+            text += "Total Paragraphs : " + allParagraphs.length + "<br>";
+
+            document.getElementById("output").innerHTML = text;
+
+        });
+
+
+        document.getElementById("btn3").addEventListener("click", function () {
+
+            let newPara = document.createElement("p");
+
+            newPara.textContent = "New Paragraph Created";
+
+            newPara.setAttribute("class", "intro");
+
+            document.getElementById("container").appendChild(newPara);
+
+        });
+
+
+        document.getElementById("btn4").addEventListener("click", function () {
+
+            let copy = document.getElementById("firstPara").cloneNode(true);
+
+            document.getElementById("container").appendChild(copy);
+
+        });
+
+
+        document.getElementById("btn5").addEventListener("click", function () {
+
+            let parent = document.getElementById("container");
+
+            parent.removeChild(parent.lastElementChild);
+
+        });
+
+
+        document.getElementById("btn6").addEventListener("click", function () {
+
+            let newNode = document.createElement("p");
+
+            newNode.innerHTML = "This Paragraph Replaced First Paragraph";
+
+            let oldNode = document.getElementById("firstPara");
+
+            oldNode.parentNode.replaceChild(newNode, oldNode);
+
+        });
+
+
+
+        heading.setAttribute("title", "DOM Heading");
+
+        console.log(heading.getAttribute("title"));
+
+        heading.removeAttribute("title");
+
+
+
+        document.getElementById("username").value = "Jenisha";
+
+
+        let parent = document.getElementById("firstPara").parentNode;
+
+        console.log(parent);
+
+        console.log(parent.childNodes);
+
+        console.log(parent.firstChild);
+
+        console.log(parent.lastChild);
+
+        console.log(document.getElementById("firstPara").nextSibling);
+
+    </script>
+
+</body>
+
+</html>
