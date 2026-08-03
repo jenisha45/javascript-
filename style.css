@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+}
+
+fieldset {
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: #041c24;
+    font-size: 1.2em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+.gender {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+.gender input[type="radio"] {
+    accent-color: #007bff;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
